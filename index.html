@@ -6,12 +6,49 @@
     <title>HTML in CSS</title>
     <style>
       #root {
-        background: #111111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        flex-direction: column;
+      }
+
+      #root > div#header {
+        font-size: x-large;
+      }
+
+      #root > div#header::before {
+        content: 'HTML in CSS';
+      }
+
+      #root > div#DRY {
+
+      }
+
+      #root > div#DRY::before {
+        content: "DRY — don't repeat yourself";
       }
 
       #root > div#main {
-        border: 1px solid green;
-        height: 32px;
+        max-width: 500px;
+      }
+
+      #main > #question {
+        font-style: italic;
+        margin-bottom: 128px;
+      }
+
+      #main > #question::before {
+        content: 'Why are we as modern developers still writing both HTML and CSS, when the syntax of selecting elements can be interchanged with the syntax of creating them?'
+      }
+
+      #main > #answer {
+        font-size: large;
+        text-align: center;
+      }
+
+      #main > #answer::before {
+        content: 'Introducing HTML in CSS!';
       }
     </style>
   </head>
