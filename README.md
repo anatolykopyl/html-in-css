@@ -24,7 +24,7 @@ Let's take a look at a typical html page.
       font-style: italic;
     }
 
-    #main > #quote:last-child {
+    #main > #lorem:last-child {
       color: green;
     }
   </style>

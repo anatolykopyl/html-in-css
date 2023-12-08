@@ -43,7 +43,6 @@ export const createElementFromQuery = (query: string) => {
 
     const element = createElement(selector)
     const positionInParent = getPositionInParent(selector)
-    console.log(selector, positionInParent)
 
     if (positionInParent !== null) {
       parent.insertBefore(element, parent.childNodes[positionInParent - 1])
