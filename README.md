@@ -58,6 +58,10 @@ Introducing HTML-in-CSS! By installing this package you will be able to omit the
       margin-bottom: 32px;
     }
 
+    #heading::before {
+      content: 'My Cool Page';
+    }
+
     main#main {
       display: flex;
       flex-direction: column;
@@ -68,8 +72,16 @@ Introducing HTML-in-CSS! By installing this package you will be able to omit the
       font-style: italic;
     }
 
-    #main > #quote:last-child {
+    #quote::before {
+      content: '"The hardest choices require the strongest wills."';
+    }
+
+    #main > #lorem:last-child {
       color: green;
+    }
+
+    #lorem::before {
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...';
     }
   </style>
 </head>
