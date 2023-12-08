@@ -21,14 +21,6 @@
         content: 'HTML in CSS';
       }
 
-      #root > div#DRY {
-
-      }
-
-      #root > div#DRY::before {
-        content: "DRY — don't repeat yourself";
-      }
-
       #root > div#main {
         max-width: 500px;
       }
@@ -49,6 +41,14 @@
 
       #main > #answer::before {
         content: 'Introducing HTML in CSS!';
+      }
+
+      #root > div#DRY:nth-child(2) {
+
+      }
+
+      #root > div#DRY::before {
+        content: "DRY — don't repeat yourself";
       }
     </style>
   </head>
