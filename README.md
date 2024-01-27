@@ -93,3 +93,8 @@ This vastly improves the ergonomics, with only a few small tradeoffs:
 - All your styles should be written in a way, that can strictly define their position in the DOM. `id`, `:nth-child` and `>` are your best friends.
 - All of your content should be in `::before` and `::after` pseudo-elements, since this is the only way to have text in css.
 - The whole page is created in runtime by js. Your initial document will be empty with only CSS. This may have a negative impact on your SEO. 
+
+## TODO
+
+- Build time page generation
+- A plugin that allows the usage of `content` in any element

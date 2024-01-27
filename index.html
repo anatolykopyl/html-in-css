@@ -48,6 +48,13 @@
       #root > div#DRY::before {
         content: "DRY — don't repeat yourself";
       }
+
+      #root > script#script[src="/html-in-css/aux.js"]::before {}
+
+      #root > #check-console::before {
+        font-size: x-small;
+        content: 'Check the console. HTML in CSS allows the usage of JS!'
+      }
     </style>
   </head>
   <body>
