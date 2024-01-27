@@ -1,4 +1,4 @@
-import createElement from 'dom-create-element-query-selector/cjs'
+import {createElement} from "./createElement.ts"
 
 const hasId = (token: string): boolean => {
   return token.includes('#')
@@ -10,6 +10,10 @@ const isChainer = (token: string): boolean => {
 
 const isPseudo = (token: string): boolean => {
   return token.endsWith('::before') || token.endsWith('::after')
+}
+
+const removePseudo = (selector: string): string => {
+  return selector.replaceAll(/::.*/g, '')
 }
 
 const getPositionInParent = (token: string): number | null => {
@@ -29,13 +33,18 @@ export const isSinglyResolvable = (selectorText: string): boolean => {
 }
 
 export const createElementFromQuery = (query: string) => {
-  // TODO: Allow creating pseudo elements without declaring host before
   const elementSelectors = query.split(' ')
-    .filter((token) => hasId(token) && !isPseudo(token))
+    .filter((token) => hasId(token))
 
   let parent = document.body
   elementSelectors.forEach((selector) => {
-    const existingElement = parent.querySelector(selector) as HTMLElement
+    let existingElement: HTMLElement
+
+    if (isPseudo(selector)) {
+      existingElement = parent.querySelector(removePseudo(selector)) as HTMLElement
+    } else {
+      existingElement = parent.querySelector(selector) as HTMLElement
+    }
     if (existingElement) {
       parent = existingElement
       return

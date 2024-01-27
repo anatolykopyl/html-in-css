@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/css-tree": "^2.3.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "dom-create-element-query-selector": "^1.0.5"
+    "css-tree": "^2.3.1"
   }
 }
