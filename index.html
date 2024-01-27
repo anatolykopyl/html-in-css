@@ -6,6 +6,7 @@
     <title>HTML in CSS</title>
     <style>
       #root {
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -34,12 +35,13 @@
         content: 'Why are we as modern developers still writing both HTML and CSS, when the syntax of selecting elements can be interchanged with the syntax of creating them?'
       }
 
-      #main > #answer {
+      #main > a#answer[href="https://github.com/anatolykopyl/html-in-css"][target="_blank"] {
+        display: block;
         font-size: large;
         text-align: center;
       }
 
-      #main > #answer[href="https://github.com/anatolykopyl/html-in-css"]::before {
+      #main > a#answer::before {
         content: 'Introducing HTML in CSS!';
       }
 
